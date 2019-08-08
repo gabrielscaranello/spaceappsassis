@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NASA Space Apps | Assis Chateubriand</title>
 
-    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+    {{-- <link rel="stylesheet" href="{{mix('/css/app.css')}}"> --}}
 </head>
 
 <body>

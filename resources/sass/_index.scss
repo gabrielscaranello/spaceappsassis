@@ -1,0 +1,83 @@
+.background {
+    height: 100vh;
+    width: 100%;
+    background-image: url("/img/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4));
+    }
+}
+
+.form {
+    &-content {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        .item-form {
+            width: 460px;
+            height: auto;
+            background: rgba(0,0,0,.7);
+            z-index: 2;
+            padding: 1rem;
+            color: #fff;
+            border-radius: 0.5rem;
+            text-align: justify;
+
+            h4 {
+                text-align: center;
+            }
+        }
+
+        .btn {
+            background: rgba(0,0,0,.6);
+            border-radius: 1rem;
+            border: 2px solid #fff;
+            color: #FFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.5s;
+
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+
+.form-control {
+    background: transparent !important;
+    outline: 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid white !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+}
+
+.form-control::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #fff;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #fff;
+}
