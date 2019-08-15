@@ -980,7 +980,7 @@ autoprefixer@^9.4.2:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-axios@0.19.0:
+axios@0.19.0, axios@^0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
   integrity sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
@@ -5955,6 +5955,11 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^8.15.3:
+  version "8.15.3"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.15.3.tgz#cb9a619f768f62cd388d0cce71c4726c7309792b"
+  integrity sha512-SRmGNN/KxH2AIrL0jl/HJTUMnRktiMG5WCg5Qjjwmr9q0wL/Q027uUmXJGkcDhjp5N8Kh8nGOCxh/p9YqjYWJQ==
 
 symbol-observable@1.0.1:
   version "1.0.1"
