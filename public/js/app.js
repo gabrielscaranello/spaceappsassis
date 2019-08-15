@@ -4250,7 +4250,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '/',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
   }
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
@@ -4299,4 +4299,4 @@ module.exports = __webpack_require__(/*! /home/gabriel/code/github/spaceappsassi
 
 /***/ })
 
-},[[0,"/manifest","/vendor"]]]);
+},[[0,"/manifest",1]]]);

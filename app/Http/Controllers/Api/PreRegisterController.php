@@ -18,15 +18,6 @@ class PreRegisterController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +27,13 @@ class PreRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!PreRegister::where('email', $request->email)->first()) {
+            if (PreRegister::create($request->all())) {
+                return response()->json(['status' => 'success'], 200);
+            }
+            return response()->json([], 500);
+        }
+        return response()->json(['status' => 'exists']);
     }
 
     /**

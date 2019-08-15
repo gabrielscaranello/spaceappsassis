@@ -20,7 +20,7 @@ class CreatePreRegistersTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('univercity');
-            $table->integer('status', 1)->default(1);
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
