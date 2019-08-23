@@ -4,8 +4,8 @@
         <div class="item-form">
             <div class="row">
                 <div class="col-12">
-                    <h4>
-                        Pre Inscrições NASA Space Apps Challenge - Assis Chateubriand
+                    <h4 class="text-uppercase">
+                        Pré-inscrições Abertas!
                     </h4>
                 </div>
             </div>
