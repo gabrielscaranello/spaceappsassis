@@ -15,7 +15,7 @@ class PreRegisterController extends Controller
      */
     public function index()
     {
-        //
+        return PreRegister::all();
     }
 
 

@@ -15,7 +15,7 @@
 
     <v-app-bar app clipped-left color="primary" dark>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>Space Apps Assis</v-toolbar-title>
+        <v-toolbar-title>NASA Space Apps Assis</v-toolbar-title>
     </v-app-bar>
 
     <v-content>

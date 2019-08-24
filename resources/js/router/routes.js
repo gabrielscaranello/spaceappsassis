@@ -9,6 +9,7 @@ const routes = [{
         component: () => import('../pages/dashboard.vue'),
     }, {
         path: 'inscritos',
+        name: 'Incritos',
         component: () => import('../pages/subscribed/index.vue'),
     }],
 }];
