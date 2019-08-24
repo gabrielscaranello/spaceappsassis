@@ -40869,23 +40869,23 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '/',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e("/vendor"), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e("/vendor"), __webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
   }
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../pages/app.vue */ "./resources/js/pages/app.vue"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../pages/app.vue */ "./resources/js/pages/app.vue"));
   },
   children: [{
     path: '',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
     }
   }, {
     path: 'inscritos',
     name: 'Incritos',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../pages/subscribed/index.vue */ "./resources/js/pages/subscribed/index.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../pages/subscribed/index.vue */ "./resources/js/pages/subscribed/index.vue"));
     }
   }]
 }];
