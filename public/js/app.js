@@ -40836,9 +40836,19 @@ var routes = [{
 }, {
   path: '/admin',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
+    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../pages/app.vue */ "./resources/js/pages/app.vue"));
   },
-  children: []
+  children: [{
+    path: '',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
+    }
+  }, {
+    path: 'inscritos',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../pages/subscribed/index.vue */ "./resources/js/pages/subscribed/index.vue"));
+    }
+  }]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
