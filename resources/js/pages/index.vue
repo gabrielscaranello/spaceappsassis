@@ -1,59 +1,61 @@
 <template>
-<div class="background">
-    <div class="form-content">
-        <div class="item-form">
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="text-uppercase">
-                        Pré-inscrições Abertas!
-                    </h4>
+<div class="body">
+    <div class="background">
+        <div class="form-content">
+            <div class="item-form">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="text-uppercase">
+                            Pré-inscrições Abertas!
+                        </h4>
+                    </div>
                 </div>
+                <form @submit.prevent.stop="submit">
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="first_name">Primeiro Nome</label>
+                                <input v-model="form.first_name" class="form-control text-uppercase" id="first_name" name="first_name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="last_name">Sobrenome</label>
+                                <input v-model="form.last_name" class="form-control text-uppercase" id="last_name" name="last_name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input v-model="form.email" class="form-control text-lowercase" id="email" name="email" required type="email">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="whatsapp">Whatsapp</label>
+                                <the-mask v-model="form.phone" class="form-control text-lowercase" id="whatsapp" name="phone" required type="tel" :mask="['(##) # ####-####']" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="univercity">Instrituição de Ensino</label>
+                                <input v-model="form.univercity" class="form-control text-uppercase" id="univercity" name="univercity" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <button class="btn btn-block" type="submit">
+                                Inscrever-se
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
-            <form @submit.prevent.stop="submit">
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="first_name">Primeiro Nome</label>
-                            <input v-model="form.first_name" class="form-control text-uppercase" id="first_name" name="first_name" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="last_name">Sobrenome</label>
-                            <input v-model="form.last_name" class="form-control text-uppercase" id="last_name" name="last_name" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input v-model="form.email" class="form-control text-lowercase" id="email" name="email" required type="email">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="whatsapp">Whatsapp</label>
-                            <the-mask v-model="form.phone" class="form-control text-lowercase" id="whatsapp" name="phone" required type="tel" :mask="['(##) # ####-####']" />
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="univercity">Instrituição de Ensino</label>
-                            <input v-model="form.univercity" class="form-control text-uppercase" id="univercity" name="univercity" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <button class="btn btn-block" type="submit">
-                            Inscrever-se
-                        </button>
-                    </div>
-                </div>
-            </form>
-
         </div>
     </div>
 </div>
