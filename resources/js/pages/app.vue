@@ -19,8 +19,8 @@
     </v-app-bar>
 
     <v-content>
-        <v-container fluid>
-            <v-row align="center" class="px-4">
+        <v-container fluid class="col">
+            <v-row align="start" justify="start" class="px-3">
                 <router-view></router-view>
             </v-row>
         </v-container>

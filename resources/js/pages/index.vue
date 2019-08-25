@@ -1,76 +1,63 @@
 <template>
-<div class="body">
-    <div class="background">
-        <div class="form-content">
-            <div class="item-form">
-                <div class="row">
-                    <div class="col-12">
-                        <h4 class="text-uppercase">
-                            Pré-inscrições Abertas!
-                        </h4>
-                    </div>
-                </div>
-                <form @submit.prevent.stop="submit">
-                    <div class="row mt-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="first_name">Primeiro Nome</label>
-                                <input v-model="form.first_name" class="form-control text-uppercase" id="first_name" name="first_name" required>
-                            </div>
-                        </div>
+<v-app id="inspire">
+    <v-content>
+        <v-img src="/img/wallpaper.jpg" lazy-src="/img/wallpaper-lazy.jpg" aspect-ratio="1" class="primary px-0" min-height="100vh" max-height="100vh" position="0 60%">
+            <v-container class="fill-height col" fluid>
+                <v-row align="center" justify="center">
+                    <v-col cols="12" sm="8" md="6" xl="4">
+                        <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
+                            <v-toolbar color="transparent" dark flat>
+                                <v-toolbar-title class="text-uppercase">Pré-inscrições Abertas!</v-toolbar-title>
+                            </v-toolbar>
+                            <v-card-text>
+                                <v-form class="px-md-2" @submit.prevent="submit">
+                                    <v-row>
+                                        <v-flex md6 class="px-2">
+                                            <v-text-field dark v-model="form.first_name" label="Primeiro nome" name="first_name" type="text"></v-text-field>
+                                        </v-flex>
+                                        <v-flex md6 class="px-2">
+                                            <v-text-field dark v-model="form.last_name" label="Sobrenome" name="last_name" type="text"></v-text-field>
+                                        </v-flex>
+                                        <v-flex md12 class="px-2">
+                                            <v-text-field dark v-model="form.email" label="Email" name="email" type="email"></v-text-field>
+                                        </v-flex>
+                                        <v-flex md12 class="px-2">
+                                            <v-text-field dark v-mask="['(##) # ####-####']" v-model="form.phone" label="WhatsApp" name="phone" type="tel"></v-text-field>
+                                        </v-flex>
+                                        <v-flex md12 class="px-2">
+                                            <v-text-field dark v-model="form.univercity" label="Instituição" name="univercity" type="text"></v-text-field>
+                                        </v-flex>
+                                    </v-row>
+                                    <v-row class="px-2 mt-3">
+                                        <v-btn :loading="loading" dark block rounded outlined type="submit">Inscrever-se</v-btn>
+                                    </v-row>
+                                </v-form>
+                            </v-card-text>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="last_name">Sobrenome</label>
-                                <input v-model="form.last_name" class="form-control text-uppercase" id="last_name" name="last_name" required>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input v-model="form.email" class="form-control text-lowercase" id="email" name="email" required type="email">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="whatsapp">Whatsapp</label>
-                                <the-mask v-model="form.phone" class="form-control text-lowercase" id="whatsapp" name="phone" required type="tel" :mask="['(##) # ####-####']" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="univercity">Instrituição de Ensino</label>
-                                <input v-model="form.univercity" class="form-control text-uppercase" id="univercity" name="univercity" required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 mt-3">
-                            <button class="btn btn-block" type="submit">
-                                Inscrever-se
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-</div>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-img>
+    </v-content>
+</v-app>
 </template>
 
 <script>
-import axios from 'axios';
-import swal from 'sweetalert2';
-import Vue from 'vue';
-import VueTheMask from 'vue-the-mask';
-
-Vue.use(VueTheMask);
+import {
+    mask
+} from 'vue-the-mask';
 
 export default {
+    directives: {
+        mask,
+    },
+    props: {
+        source: String,
+    },
     data: () => ({
+        loading: false,
         form: {},
     }),
     methods: {
@@ -91,7 +78,7 @@ export default {
                     },
                 })
 
-                const response = (await axios.post(url, this.form));
+                const response = (await this.$http.post(url, this.form));
                 if (response.data.status == 'success') {
                     this.alert('success', 'Pre inscrição realizada com sucesso')
                     this.form = {};
