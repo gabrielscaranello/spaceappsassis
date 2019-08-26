@@ -1,30 +1,33 @@
 <template>
 <v-app id="inspire">
     <v-content>
-        <v-img src="/img/wallpaper.jpg" lazy-src="/img/wallpaper-lazy.jpg" aspect-ratio="1" class="primary px-0" min-height="100vh" max-height="100vh" position="0 60%" gradient="to bottom left, rgba(181,63,81,.33), rgba(63,81,181,.6)">
-            <v-container class="fill-height col" fluid>
-                <v-row align="center" justify="center">
-                    <v-col cols="12" sm="8" md="6" xl="4">
+        <v-img src="/img/wallpaper.jpg" lazy-src="/img/wallpaper-lazy.jpg" class="primary px-0 background_astronalt" min-width="100%" max-width="100%" position="60%" gradient="to bottom left, rgba(181,63,81,.33), rgba(63,81,181,.6)">
+            <v-container class="fill-height px-0 col">
+                <v-row class="px-0 mx-0 mw-100" align="center">
+                    <v-col cols="12" lg="6" xl="4">
+                        <v-img src="/img/logo.png" width="25rem" max-width="70%" class="mr-auto ml-auto float-lg-right mb-5" absolute></v-img>
+                    </v-col>
+                    <v-col cols="12" xs="12" lg="6" xl="4">
                         <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
                             <v-toolbar color="transparent" dark flat>
                                 <v-toolbar-title class="text-uppercase">Pré-inscrições Abertas!</v-toolbar-title>
                             </v-toolbar>
                             <v-card-text>
-                                <v-form class="px-md-2" @submit.prevent="submit">
+                                <v-form @submit.prevent="submit">
                                     <v-row>
-                                        <v-flex md6 class="px-2">
+                                        <v-flex class="px-3" lg6>
                                             <v-text-field dark v-model="form.first_name" label="Primeiro nome" name="first_name" type="text"></v-text-field>
                                         </v-flex>
-                                        <v-flex md6 class="px-2">
+                                        <v-flex class="px-3" lg6>
                                             <v-text-field dark v-model="form.last_name" label="Sobrenome" name="last_name" type="text"></v-text-field>
                                         </v-flex>
-                                        <v-flex md12 class="px-2">
+                                        <v-flex class="px-3" xs12>
                                             <v-text-field dark v-model="form.email" label="Email" name="email" type="email"></v-text-field>
                                         </v-flex>
-                                        <v-flex md12 class="px-2">
+                                        <v-flex class="px-3" xs12>
                                             <v-text-field dark v-mask="['(##) # ####-####']" v-model="form.phone" label="WhatsApp" name="phone" type="tel"></v-text-field>
                                         </v-flex>
-                                        <v-flex md12 class="px-2">
+                                        <v-flex class="px-3" xs12>
                                             <v-text-field dark v-model="form.univercity" label="Instituição" name="univercity" type="text"></v-text-field>
                                         </v-flex>
                                     </v-row>
