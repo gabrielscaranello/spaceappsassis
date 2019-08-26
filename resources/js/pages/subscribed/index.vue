@@ -6,7 +6,7 @@
             <div class="flex-grow-1"></div>
             <v-text-field v-model="search" append-icon="search" label="Pesquisar" single-line hide-details></v-text-field>
         </v-card-title>
-        <v-data-table :headers="headers" :items="items" :search="search" :loading="!items.length" loading-text="Buscando dados...">
+        <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" loading-text="Buscando dados...">
             <template v-slot:item.first_name="{ item }">
                 {{`${item.first_name} ${item.last_name}`}}
             </template>
@@ -26,10 +26,12 @@ export default {
             search: '',
             headers: [],
             items: [],
+            loading: true,
         }
     },
     methods: {
         async getData() {
+            this.loading = true;
             const response = (await this.$http.get('pre-register'));
             this.items = response.data;
 
@@ -59,6 +61,8 @@ export default {
                 sortable: false,
                 value: 'id',
             }];
+
+            this.loading = false;
         }
     },
     mounted() {

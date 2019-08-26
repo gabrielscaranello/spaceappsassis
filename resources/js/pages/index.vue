@@ -1,7 +1,7 @@
 <template>
 <v-app id="inspire">
     <v-content>
-        <v-img src="/img/wallpaper.jpg" lazy-src="/img/wallpaper-lazy.jpg" aspect-ratio="1" class="primary px-0" min-height="100vh" max-height="100vh" position="0 60%">
+        <v-img src="/img/wallpaper.jpg" lazy-src="/img/wallpaper-lazy.jpg" aspect-ratio="1" class="primary px-0" min-height="100vh" max-height="100vh" position="0 60%" gradient="to bottom left, rgba(181,63,81,.33), rgba(63,81,181,.6)">
             <v-container class="fill-height col" fluid>
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="8" md="6" xl="4">
