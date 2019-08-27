@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PreRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Ecents\RegisterMail;
 
 class PreRegisterController extends Controller
 {
@@ -28,7 +29,8 @@ class PreRegisterController extends Controller
     public function store(Request $request)
     {
         if (!PreRegister::where('email', $request->email)->first()) {
-            if (PreRegister::create($request->all())) {
+            if ($preregister = PreRegister::create($request->all())) {
+                event(new RegisterMail($preregister));
                 return response()->json(['status' => 'success'], 200);
             }
             return response()->json([], 500);

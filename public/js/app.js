@@ -47053,7 +47053,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '/',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
+    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../pages/index.vue */ "./resources/js/pages/index.vue"));
   }
 }, {
   path: '/login',
@@ -47068,7 +47068,7 @@ var routes = [{
   children: [{
     path: '',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../pages/dashboard.vue */ "./resources/js/pages/dashboard.vue"));
     }
   }, {
     path: 'inscritos',
