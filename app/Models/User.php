@@ -10,6 +10,8 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+    protected $hidden = ['password', 'remember_token'];
+
     // Rest omitted for brevity
 
     /**

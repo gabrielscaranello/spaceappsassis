@@ -16,6 +16,8 @@
     <v-app-bar app clipped-left color="primary" dark>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title>NASA Space Apps Assis</v-toolbar-title>
+        <div class="flex-grow-1"></div>
+        <avatar></avatar>
     </v-app-bar>
 
     <v-content>
@@ -29,7 +31,8 @@
 </template>
 
 <script>
-import menu from '../utils/menu';
+import menu from '@/utils/menu';
+import Avatar from '@/components/avatar'
 
 export default {
     props: {
@@ -42,5 +45,8 @@ export default {
     created() {
         this.$vuetify.theme.dark = false
     },
+    components: {
+        Avatar
+    }
 }
 </script>

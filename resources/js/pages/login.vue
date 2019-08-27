@@ -5,7 +5,7 @@
             <v-container class="fill-height col" fluid>
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="8" md="6" xl="4">
-                        <v-form ref="login" v-model="valid" lazy-validation>
+                        <v-form ref="login" v-model="valid" lazy-validation @submit.prevent="onSubmit">
                             <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
                                 <v-toolbar color="transparent" dark flat>
                                     <v-toolbar-title>Login</v-toolbar-title>
@@ -21,12 +21,12 @@
 
                                     <v-text-field :rules="emailRules" required dark v-model="form.email" label="Email" name="login" prepend-icon="person" type="text"></v-text-field>
 
-                                    <v-text-field  :rules="passwordRules" required dark v-model="form.password" id="password" label="Senha" name="password" prepend-icon="lock" type="password"></v-text-field>
+                                    <v-text-field :rules="passwordRules" required dark v-model="form.password" id="password" label="Senha" name="password" prepend-icon="lock" type="password"></v-text-field>
                                 </v-card-text>
                                 <v-card-actions>
                                     <div class="flex-grow-1"></div>
                                     <v-flex sm6>
-                                        <v-btn :loading="loading" outlined dark rounded block class="mb-3" @click.prevent="onSubmit">
+                                        <v-btn :loading="loading" outlined dark rounded block class="mb-3" type="submit">
                                             Entrar
                                         </v-btn>
                                     </v-flex>

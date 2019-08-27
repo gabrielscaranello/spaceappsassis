@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
           'email' => 'gabrieljscaranello@gmail.com',
           'password' => Hash::make('@S3v3n'),
           'role' => 'admin',
-          'avatar' => 'https://ifpreventos.com.br/uploads/avatar/A-1555177442.jpg',
+          'avatar' => 'https://semanadecursos2019.ifpreventos.com.br/uploads/avatar/A-1555177442.jpg',
         ]);
 
         User::create([

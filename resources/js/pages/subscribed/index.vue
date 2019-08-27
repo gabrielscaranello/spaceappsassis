@@ -6,7 +6,7 @@
             <div class="flex-grow-1"></div>
             <v-text-field v-model="search" append-icon="search" label="Pesquisar" single-line hide-details></v-text-field>
         </v-card-title>
-        <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" loading-text="Buscando dados...">
+        <v-data-table :headers="headers" :items="items" :search="search" :loading="loading" loading-text="Buscando dados..." no-results-text="Nenhum dado encontrado." no-data-text="Nenhum dado para mostrar." hide-default-footer>
             <template v-slot:item.first_name="{ item }">
                 {{`${item.first_name} ${item.last_name}`}}
             </template>
@@ -15,6 +15,20 @@
                 <v-icon @click="">delete</v-icon>
             </template>
         </v-data-table>
+        <v-card-text>
+            <v-row>
+                <v-flex xs12 lg6 class="pl-2" height="82">
+                    <v-select :items="[5,10]" label="Itens por página"></v-select>
+                </v-flex>
+                <v-flex xs12 lg6 class="justify-end">
+                    <div class="text-right">
+                        dados da paginação
+                    </div>
+                    <v-pagination v-model="page" class="justify-end" :length="4" circle></v-pagination>
+                </v-flex>
+            </v-row>
+
+        </v-card-text>
     </v-card>
 </v-flex>
 </template>
@@ -23,9 +37,12 @@
 export default {
     data() {
         return {
+            page: 1,
             search: '',
             headers: [],
             items: [],
+            total: 0,
+            perPage: 5,
             loading: true,
         }
     },
