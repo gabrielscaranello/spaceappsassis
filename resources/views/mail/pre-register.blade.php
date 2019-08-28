@@ -14,7 +14,7 @@
 
     <div style="text-align: justify; background: #fff; border-radius: .5rem; overflow: hidden; padding: 1rem; display: block; margin: 1rem;">
         <h4 style="margin-bottom: 1rem;">
-            Olá {{$data['first_name']}},
+            Olá {{$preregister['first_name']}},
         </h4>
         <p>
             Sua pré-inscrição no Space Apps Assis Chateaubriand 2019 foi realizada com sucesso.
@@ -25,7 +25,7 @@
     </div>
 
     <div style="text-align: center;">
-        <img src="img/logo.png" style="width: 7rem;display: block;margin-left: auto;margin-right: auto;margin-bottom: 1rem;">
+        <img src="{!!asset('img/logo.png')!!}" style="width: 7rem;display: block;margin-left: auto;margin-right: auto;margin-bottom: 1rem;">
         <a target="_blank" href="https://spaceappsassis.com" style="color: #fff; text-decoration: none; font-weight: bold;">spaceappsassis.com</a>
     </div>
 </div>

@@ -41,6 +41,12 @@
                         </v-card>
                     </v-col>
                 </v-row>
+                <v-snackbar v-model="snackbar.show" :color="snackbar.color" top>
+                    {{ snackbar.text }}
+                    <v-btn dark text @click="snackbar.show = false">
+                        Ok
+                    </v-btn>
+                </v-snackbar>
             </v-container>
         </v-img>
     </v-content>
@@ -62,45 +68,44 @@ export default {
     data: () => ({
         loading: false,
         form: {},
+        snackbar: {
+            show: false,
+            text: '',
+            color: '',
+        }
     }),
     methods: {
         async submit() {
             if (this.validate) {
-                const url = '/api/pre-register';
+                this.loading = true;
+                const url = 'pre-register';
                 this.form.first_name = this.form.first_name.toUpperCase();
                 this.form.last_name = this.form.last_name.toUpperCase();
                 this.form.univercity = this.form.univercity.toUpperCase();
                 this.form.email = this.form.email.toLowerCase();
                 this.form.phone = this.form.phone.toLowerCase();
 
-                swal.fire({
-                    title: 'Aguarde!',
-                    text: 'Realizando registro...',
-                    onBeforeOpen: () => {
-                        swal.showLoading()
-                    },
-                })
-
-                const response = (await this.$http.post(url, this.form));
-                if (response.data.status == 'success') {
-                    this.alert('success', 'Pre inscrição realizada com sucesso')
+                const res = (await this.$http.post(url, this.form));
+                if (res.status && res.data.status == 'success') {
+                    this.alert('indigo', 'Pré-inscrição realizada com sucesso')
                     this.form = {};
-                } else if (response.data.status == 'exists') {
-                    this.alert('error', 'Email já cadastrado')
+                } else if (res.status && res.data.status == 'exists') {
+                    this.alert('error', 'Email já cadastrado anteriormente')
                 } else {
                     this.alert('error', 'Ocorreu um erro, tente novamente mais tarde')
                 }
+
+                this.loading = false;
             } else {
                 this.alert('error', 'Favor, preencher todos os dados')
             }
         },
-        alert(type, message) {
-            swal.fire({
-                type: type,
-                title: type == 'error' ? 'Oops...' : 'Sucesso!',
-                text: message,
-                showConfirmButton: true
-            })
+        alert(color, text) {
+            this.snackbar = {
+                color: color,
+                text: text,
+                show: true,
+            };
         }
     },
     computed: {
@@ -113,6 +118,6 @@ export default {
             if (!data.univercity) return false;
             return true;
         }
-    }
+    },
 }
 </script>

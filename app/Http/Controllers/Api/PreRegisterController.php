@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PreRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Ecents\RegisterMail;
+use App\Events\RegisterMail;
 
 class PreRegisterController extends Controller
 {
@@ -33,7 +33,7 @@ class PreRegisterController extends Controller
                 event(new RegisterMail($preregister));
                 return response()->json(['status' => 'success'], 200);
             }
-            return response()->json([], 500);
+            return response()->json(['status' => 'error'], 500);
         }
         return response()->json(['status' => 'exists']);
     }
