@@ -13,7 +13,7 @@ mix.webpackConfig({
 });
 
 mix.js('resources/js/app.js', 'public');
-mix.extract(['vue', 'bootstrap', 'axios', 'sweetalert2'])
+mix.extract(['vue', 'vue-cookies', 'axios', 'vuetify'])
 
 if (mix.inProduction()) {
     mix.version();
