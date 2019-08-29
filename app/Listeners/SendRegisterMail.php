@@ -6,6 +6,7 @@ use App\Events\RegisterMail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Mail\PreRegiterMail;
+use App\Mail\PreRegiterLogMail;
 use Illuminate\Support\Facades\Mail;
 
 class SendRegisterMail
@@ -29,5 +30,6 @@ class SendRegisterMail
     public function handle(RegisterMail $event)
     {
       Mail::to($event->preregister->email)->send(new PreRegiterMail($event->preregister));
+      Mail::to(env('CONTACT_MAIL'))->send(new PreRegiterLogMail($event->preregister));
     }
 }

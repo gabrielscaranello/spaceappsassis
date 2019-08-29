@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PreRegiterMail extends Mailable
+class PreRegiterLogMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,6 +32,6 @@ class PreRegiterMail extends Mailable
     {
         return $this->from(env('MAIL_USERNAME'))
         ->subject('Pré-inscrições Space Apps Assis Chateaubriand')
-        ->view('mail.pre-register', compact('preregister'));
+        ->view('mail.pre-register-log', compact('preregister'));
     }
 }

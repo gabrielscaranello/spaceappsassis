@@ -13,14 +13,20 @@
     </div>
 
     <div style="text-align: left; background: #fff; border-radius: .5rem; overflow: hidden; padding: 1rem; display: block; margin: 1rem;font-size: 1.2rem;">
-        <h4 style="margin-bottom: 1rem; font-size: 1.5rem;">
-            Olá {{$preregister['first_name']}},
-        </h4>
         <p>
-            Sua pré-inscrição no Space Apps Assis Chateaubriand 2019 foi realizada com sucesso.
+            Nova inscrição no Space Apps Assis Chateaubriand 2019.
         </p>
         <p>
-            Aguarde, em breve abriremos as inscrições oficiais.
+            <b>Nome:</b> {{$preregister['first_name'] ." ". $preregister['last_name']}}
+        </p>
+        <p>
+            <b>Email:</b> {{$preregister['email']}}
+        </p>
+        <p>
+            <b>WhatsApp: </b> {{$preregister['phone']}}
+        </p>
+        <p>
+            <b>Instituição: </b> {{$preregister['univercity']}}
         </p>
         <div style="margin-top: 5rem;">
             <p>
