@@ -17,7 +17,7 @@ router.beforeEach(async (to, _from, next) => {
     const auth = await Jwt.check();
 
     if (auth === 200) {
-        if (to.path === '/login') return next('/');
+        if (to.path === '/login') return next('/admin');
         return next();
     }
     if (auth !== 200) {

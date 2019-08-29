@@ -5,11 +5,11 @@
             <v-container class="fill-height px-0 col">
                 <v-row class="px-0 mx-0 mw-100" align="center">
                     <v-col cols="12" lg="6" xl="4">
-                        <v-img src="/img/logo.png" width="25rem" max-width="70%" class="mr-auto ml-auto float-lg-right mb-5" absolute></v-img>
+                        <v-img src="/img/logo.png" width="25rem" max-width="70%" class="mr-auto ml-auto mb-5" absolute></v-img>
                     </v-col>
                     <v-col cols="12" xs="12" lg="6" xl="4">
                         <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
-                            <v-toolbar color="transparent" dark flat>
+                            <v-toolbar color="transparent" class="d-flex justify-center" dark flat>
                                 <v-toolbar-title class="text-uppercase">Pré-inscrições Abertas!</v-toolbar-title>
                             </v-toolbar>
                             <v-card-text>

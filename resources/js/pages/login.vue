@@ -58,7 +58,7 @@ export default {
         ],
         passwordRules: [
             v => !!v || 'A senha é obrigatória',
-            v => (v && v.length <= 8) || 'A senha deve conter ao menos 8 caracteres',
+            v => (v && v.length >= 6) || 'A senha deve conter ao menos 6 caracteres',
         ],
     }),
     methods: {
