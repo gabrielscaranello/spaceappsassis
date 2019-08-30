@@ -16,7 +16,9 @@ class PreRegisterController extends Controller
      */
     public function index()
     {
-        return PreRegister::all();
+        $preregister = PreRegister::orderBy('first_name')->orderBy('last_name')
+        ->get(['id', 'first_name', 'last_name', 'email', 'phone', 'univercity']);
+        return $preregister;
     }
 
 
