@@ -1,10 +1,12 @@
 @media (max-width: 1263px) {
     .background_astronalt {
         height: 100%;
+        position: fixed;
     }
 }
 @media (min-width: 1264px) {
     .background_astronalt {
         height: 100vh;
+        position: fixed;
     }
 }

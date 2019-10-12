@@ -1667,11 +1667,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
-bootstrap@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
-  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -7852,11 +7847,6 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
-
-sweetalert2@^8.15.3:
-  version "8.15.3"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.15.3.tgz#cb9a619f768f62cd388d0cce71c4726c7309792b"
-  integrity sha512-SRmGNN/KxH2AIrL0jl/HJTUMnRktiMG5WCg5Qjjwmr9q0wL/Q027uUmXJGkcDhjp5N8Kh8nGOCxh/p9YqjYWJQ==
 
 symbol-observable@1.0.1:
   version "1.0.1"
