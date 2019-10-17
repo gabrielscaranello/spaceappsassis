@@ -10,43 +10,14 @@
                 <v-col cols="12" xs="12" lg="4" xl="4">
                     <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
                         <v-toolbar color="transparent" class="d-flex justify-center" dark flat>
-                            <v-toolbar-title class="text-uppercase">Inscrições Abertas!</v-toolbar-title>
+                            <v-toolbar-title class="text-uppercase">Inscrições Encerradas!</v-toolbar-title>
                         </v-toolbar>
-                        <v-card-text>
-                            <v-form @submit.prevent="submit">
-                                <v-row>
-                                    <v-flex class="px-3" lg6>
-                                        <v-text-field dark v-model="form.first_name" label="Primeiro nome" name="first_name" type="text"></v-text-field>
-                                    </v-flex>
-                                    <v-flex class="px-3" lg6>
-                                        <v-text-field dark v-model="form.last_name" label="Sobrenome" name="last_name" type="text"></v-text-field>
-                                    </v-flex>
-                                    <v-flex class="px-3" xs12>
-                                        <v-text-field dark v-model="form.email" label="Email" name="email" type="email"></v-text-field>
-                                    </v-flex>
-                                    <v-flex class="px-3" xs12>
-                                        <v-text-field dark v-mask="['(##) # ####-####']" v-model="form.phone" label="WhatsApp" name="phone" type="tel"></v-text-field>
-                                    </v-flex>
-                                    <v-flex class="px-3" xs12>
-                                        <v-text-field dark v-model="form.univercity" label="Instituição" name="univercity" type="text"></v-text-field>
-                                    </v-flex>
-                                </v-row>
-                                <v-row class="px-2 mt-3">
-                                    <v-btn :loading="loading" dark block rounded outlined type="submit">Inscrever-se</v-btn>
-                                </v-row>
-                            </v-form>
-                        </v-card-text>
-
-
-                    </v-card>
+                      </v-card>
                 </v-col>
 
 
-                <v-col cols="12" md="6" offset-md="3" class="mt-2">
+                <v-col cols="12" md="6" offset-md="3">
                     <v-card class="elevation-12" color="rgba(0, 0, 0, 0.7)">
-
-
-
 
                         <v-card-text class="white--text">
                             <h2 class="text-uppercase mb-5 white--text">Olá! Seja bem-vindo ao Nasa Space Apps Assis Chateaubriand</h2>
@@ -339,31 +310,6 @@ export default {
         }
     }),
     methods: {
-        async submit() {
-            if (this.validate) {
-                this.loading = true;
-                const url = 'pre-register';
-                this.form.first_name = this.form.first_name.toUpperCase();
-                this.form.last_name = this.form.last_name.toUpperCase();
-                this.form.univercity = this.form.univercity.toUpperCase();
-                this.form.email = this.form.email.toLowerCase();
-                this.form.phone = this.form.phone.toLowerCase();
-
-                const res = (await this.$http.post(url, this.form));
-                if (res.status && res.data.status == 'success') {
-                    this.alert('indigo', 'Inscrição realizada com sucesso')
-                    this.form = {};
-                } else if (res.status && res.data.status == 'exists') {
-                    this.alert('error', 'Email já cadastrado anteriormente')
-                } else {
-                    this.alert('error', 'Ocorreu um erro, tente novamente mais tarde')
-                }
-
-                this.loading = false;
-            } else {
-                this.alert('error', 'Favor, preencher todos os dados')
-            }
-        },
         alert(color, text) {
             this.snackbar = {
                 color: color,
